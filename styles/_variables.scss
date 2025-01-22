@@ -1,0 +1,47 @@
+:root {
+  --color-dark: #05010a;
+  --color-dark-rgb: 5, 1, 10;
+  --color-accent: #fcb045;
+  --color-accent-second: #BD00FF;
+  --color-accent-third: #ff3f78;
+   --color-light-text: #cacaca;
+  --color-text-gradient: linear-gradient(123deg, #fcb045 24.21%, #ff3f78 100%);
+  --overflow-gradient: radial-gradient(
+    44.13% 48% at 50% 50%,
+    rgba(var(--color-dark-rgb), 0) 59.16%, 
+    rgba(var(--color-dark-rgb), 1) 100%
+  );
+  --color-gradient: linear-gradient(
+    123deg,
+    #fcb045 24.21%,
+    #ff3f78 50%,
+    #fcb045 75.21%
+  );
+  --color-white: #fff;
+  --font-family-base: "Formular", sans-serif;
+  --font-family-second: "SourGummy_SemiExpanded", sans-serif;
+  --font-size--small: 13px;
+  --font-size--medium: 20px;
+  --font-size--large: 36px;
+  --font-size--x-large: 42px;
+  --header-height: clamp(60px, 8.46vw, 124px);
+  --item-width: 25vw;
+  --item-koeff: 4.8;
+  --gap: 1.08vw;
+  @include tablet {
+    --item-width: 30vw;
+    --item-koeff: 4.5;
+  }
+  @include mobile {
+    --item-width: 35vw;
+    --item-koeff: 3.4;
+  }
+  @include mobile-s {
+    --item-width: 70vw;
+    --item-koeff: 2.8;
+  }
+  @include desktop-above {
+    --item-width: 17vw;
+    --item-koeff: 6.5;
+  }
+}

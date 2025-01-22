@@ -1,0 +1,229 @@
+.footer {
+  position: relative;
+  text-transform: uppercase;
+
+  .text {
+    width: 100%;
+    text-align: end;
+      
+  }
+  svg {
+    width: auto;
+    height: 1.2em; 
+    vertical-align: top;
+    animation: hello 4s 5s infinite;
+    transform-origin: bottom center;
+  }
+  .animated-path {
+    stroke-width: clamp(0.5px, 0.05vw, 1px);
+    stroke-linecap: round;
+    stroke-dasharray: 90;
+  stroke-dashoffset: 90;
+  animation: flicker 2s infinite, color-change 1s infinite, draw-line 2s 2s ease-out forwards 1;
+  }
+  .container {
+    color: var(--color-light-text);
+    font-weight: 400;
+    @include fluid-text(120, 48);
+    line-height: 1.5;
+    
+    
+    .text svg {
+      animation-delay: 3s;
+    }
+   
+    @include desktop-above {
+      font-size: 120px;
+    }
+}
+  .animation {
+    padding-left: 5vw;
+    width: 60%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-20%);
+    @include mobile {
+      width: 60%;
+    }
+  }
+
+  .animation > div {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    text-align: center;
+    -webkit-mask-image: radial-gradient(
+      circle at var(--gradientX, 10%) var(--gradientY, 50%),
+      rgba(255, 255, 255, 1) 69%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      circle at var(--gradientX, 10%) var(--gradientY, 50%),
+      rgba(255, 255, 255, 1) 69%,
+      transparent 100%
+    );
+   
+  }
+  .animation > div > div {
+    font-family: var(--font-family-second);
+    font-weight: 450;
+    font-style: italic;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  .first {
+    animation: text-animation 15s ease infinite;
+    transform: translateY(1.5em);
+    color: var(--color-accent-second);
+    text-shadow: 4px 4px 35px var(--color-accent-second);
+  }
+  .second {
+    animation: text-animation 15s 5s ease infinite;
+    color: var(--color-accent);
+    text-shadow: 4px 4px 35px var(--color-accent);
+  }
+  .third {
+    animation: text-animation 15s 10s ease infinite;
+    transform: translateY(-1.5em);
+    color: var(--color-accent-third);
+    text-shadow: 4px 4px 35px var(--color-accent-third);
+  }
+  &__contacts {
+    display: grid;
+     grid-template-columns: repeat(2, clamp(160px, 20vw, 280px));
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    column-gap: 3vw;
+   
+  }
+  &__title {
+    grid-column: span 2;
+    font-weight: 300;
+    span {
+      font-family: var(--font-family-second);
+      font-weight: 250;
+      font-style: italic;
+      font-size: 1.2em;
+    }
+   
+  }
+  &__mailto,
+  &__telegram {
+    width: 100%;
+    margin-top: clamp(30px, 5vw, 60px);
+    position: relative;
+    padding-inline: clamp(10px, 2vw, 30px);
+    padding-block: clamp(5px, 1vw, 20px);;
+    background-color: rgba(255, 255, 255, 0.3);
+    text-wrap: nowrap;
+    svg {
+        padding-left: 1vw;
+    }
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(254, 254, 254);
+        background: linear-gradient(
+          135deg,
+          transparent 45%,
+          rgba(230, 249, 254, 0.5) 55%,
+          transparent 60%
+        );
+        animation: shine 5s linear infinite;
+        background-size: 200%;
+      }
+
+      transition: 
+    box-shadow 0.5s ease, 
+    border-color 0.5s ease, 
+    transform 0.5s ease;
+  @include hover {
+    box-shadow: -3px -3px 0px 0px rgba(255, 255, 255, 0.7), -2px -2px 0px 0px rgba(255, 255, 255, 0.8), -1px -1px 0px 0px rgba(255, 255, 255, 0.9);
+    /* border-color: var(--color-accent); */
+    transform: scale(1.2) rotateX(-8deg) rotateY(22deg);
+    transform-style: preserve-3d;
+    text-shadow: 1px 1px 1px var(--color-dark), -0.5px -0.5px 0px rgba(255, 255, 255, 0.9);
+  }
+  
+}
+&__telegram::before {
+  animation-delay: 4s;
+}
+&__rights {
+  
+  width: 100%;
+  padding: 1vw;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  text-transform: none;
+
+  span {
+    font-family: var(--font-family-second);
+    font-weight: 250;
+    font-style: italic;
+    text-transform: none;
+    margin-right: auto;
+    text-align: center;
+  }
+  svg {
+    animation: none;
+    stroke: var(--color-light-text);
+     stroke-linecap: round;
+     stroke-linejoin: round;
+     height: 1em;
+  }
+ 
+}
+}
+@keyframes text-animation {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  25% {
+    width: 100%;
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+}
+@keyframes hello {
+    0% {
+        transform: rotateZ(0);
+    }
+    2% {
+        transform: rotateZ(10deg);
+    }
+    4% {
+        transform: rotateZ(-10deg);
+    }
+    6% {
+        transform: rotateZ(10deg);
+    }
+    8% {
+        transform: rotateZ(-10deg);
+    }
+    10% {
+        transform: rotateZ(0);
+    }
+}
+@keyframes shine {
+    0% {
+      background-position: 0; /* Начало за пределами элемента */
+    }
+    30% {
+      background-position: 150% 0; /* Блик проходит через элемент */
+    }
+    100% {
+      background-position: 150% 0; /* Ожидание перед следующим бликом */
+    }
+  }

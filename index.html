@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+   <header id="contacts" class="footer footer--container">
+    <div class="container">
+        <div class="animation">
+          <div class="first"><div>Unity</div></div>
+          <div class="second"><div>Spine</div></div>
+          <div class="third"><div>Blender</div></div>
+        </div>
+      </div>
+   </header>
+    <main class="main section--container">
+      <section id="archer" class="archer model content track-section" data-threshold="0.1">
+        <div class="content--container">
+          
+          <div class="content__video-wrapper">
+            <video
+              class="video video--single observe-video"
+              loading="lazy"
+              loop
+              muted
+              playsinline
+            >
+            <source src="./video/video.webm" type="video/webm" />
+            <source src="./video/video.mp4" type="video/mp4"/>
+            </video>
+          </div>
+          
+        </div>
+         
+      </section>
+      <section id="characters" class="characters content">
+        <div class="content--container">
+         
+          <div class="characters__gallery gallery track-section" data-threshold="0.1">
+            
+            <ul class="gallery__list list">
+              <li id="character-6" class="gallery__item" >
+                <img class="gallery__image" width="1920" height="1280" src="./img/orig (1).jpeg"  loading="lazy" alt="sculpting image">
+              </li>
+              <li id="character-7" class="gallery__item" >
+                <img class="gallery__image" width="1920" height="1280" src="./img/orig (2).jpeg"  loading="lazy" alt="sculpting image">
+              </li>
+              <li id="character-3" class="gallery__item" >
+                <img class="gallery__image" width="1920" height="1280" src="./img/orig (3).jpeg"  loading="lazy" alt="sculpting image">
+              </li>
+              <li id="character-4" class="gallery__item" >
+                <img class="gallery__image" width="1920" height="1280" src="./img/orig (4).jpeg"  loading="lazy" alt="sculpting image">
+              </li>
+              <li id="character-9" class="gallery__item" >
+                <img class="gallery__image" width="1920" height="1280" src="./img/screenE3.jpg"  loading="lazy" alt="sculpting image">
+              </li>
+              <li id="character-1" class="gallery__item" >
+                <img class="gallery__image" width="1920" height="1280" src="./img/screenE4.jpg"  loading="lazy" alt="sculpting image">
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer footer--container">
+      <p class="footer__rights">
+        <span>Thank you for visiting my website! I hope you enjoyed it!</span>
+        <small> 2024, IrenNov.All rights reserved.</small>
+        <a href="mailto:irennov524@gmail.com">
+          <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 2V12C19 12.2652 18.8946 12.5196 18.7071 12.7071C18.5196 12.8946 18.2652 13 18 13H2C1.73478 13 1.48043 12.8946 1.29289 12.7071C1.10536 12.5196 1 12.2652 1 12V2M19 2C19 1.73478 18.8946 1.48043 18.7071 1.29289C18.5196 1.10536 18.2652 1 18 1H2C1.73478 1 1.48043 1.10536 1.29289 1.29289C1.10536 1.48043 1 1.73478 1 2M19 2L11.28 8.433C10.9206 8.73233 10.4677 8.89625 10 8.89625C9.53229 8.89625 9.07938 8.73233 8.72 8.433L1 2" />
+            </svg>
+      </a>
+      </p>
+    </footer>
+    <script> window.onload = function() {window.scrollTo(0, 0);}</script>
+    <script src="./scripts/observer.js"></script>
+    <script src="./scripts/focusmove.js"></script>
+    <script src="./scripts/fullscreen-video.js"></script>
+    <script src="./scripts/hoverimg.js"></script>
+    <script src="./scripts/active-item.js"></script>
+    
+  </body>
+</html>
